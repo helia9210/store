@@ -2,16 +2,17 @@ import {Link, useLoaderData} from "react-router-dom";
 
 
 
-const ProductsGrid = () => {
+const ProductsList = () => {
 
     const {products} = useLoaderData();
+
 
     return (
         <div className='pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
             {products.map((product) => {
                 const {title, image, price} = product.attributes;
                 return <Link key={product.id} to={`/products/${product.id}`}
-                className='card w-full shadow-xl hover:shadow-2xl transition duration-300'>
+                             className='card w-full shadow-xl hover:shadow-2xl transition duration-300'>
                     <figure className='p-4'>
                         <img src={image} alt={title} className='rounded-xl h-64 md:h-48 w-full object-cover'/>
                     </figure>
@@ -26,4 +27,4 @@ const ProductsGrid = () => {
     )
 }
 
-export default ProductsGrid
+export default ProductsList

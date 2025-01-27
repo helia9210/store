@@ -1,3 +1,7 @@
+GET https://strapi-store-server.onrender.com/api/products/16
+Accept: application/json
+
+###
 GET http://localhost:80/api/item?id=99
 Accept: application/json
 
@@ -6,3 +10,5 @@ GET https://strapi-store-server.onrender.com/api/products?featured=true
 Accept: application/json
 
 ###
+
+
