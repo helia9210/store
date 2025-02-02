@@ -2,6 +2,7 @@ import {Form, Link, useLoaderData} from "react-router-dom";
 import FormInput from "./FormInput.jsx";
 import FormSelect from "./FormSelect.jsx";
 import FormRange from "./FormRange.jsx";
+import FormCheckbox from "./FormCheckbox.jsx";
 
 const Filters = () => {
 
@@ -17,6 +18,7 @@ const Filters = () => {
             {/*order*/}
             <FormSelect label='sort by' name='order' list={['a-z', 'z-a', 'high', 'low']} size='select-sm'/>
             <FormRange label='select price' name='price' size='range-sm'/>
+            <FormCheckbox label='free shipping' name='shipping' size='checkbox-sm' />
             <button type='submit' className='btn btn-sm btn-primary'>
                 search
             </button>
