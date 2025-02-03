@@ -1,3 +1,19 @@
+GET https://strapi-store-server.onrender.com/api/products?page=2
+Accept: application/json
+
+###
+GET https://strapi-store-server.onrender.com/api/products?price=15000
+Accept: application/json
+
+###
+GET https://strapi-store-server.onrender.com/api/products?company=luxora
+Accept: application/json
+
+###
+GET https://strapi-store-server.onrender.com/api/products?search=chair
+Accept: application/json
+
+###
 GET https://strapi-store-server.onrender.com/api/products/16
 Accept: application/json
 
