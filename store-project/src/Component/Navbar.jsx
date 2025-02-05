@@ -4,6 +4,7 @@ import { FaBarsStaggered, FaCartShopping } from "react-icons/fa6";
 import { IoSunny, IoMoon } from "react-icons/io5";
 import NavLinks from "./NavLinks.jsx";
 import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
 
 const themes = {
     winter : 'winter',
@@ -29,6 +30,8 @@ const Navbar = () => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme)
     }, [theme]);
+
+    const numItemsInCart = useSelector((state)=> state.cartState.numItemsInCart);
     return(
         <nav className='bg-base-200'>
             <div className='navbar align-element'>
@@ -65,7 +68,9 @@ const Navbar = () => {
                     <NavLink to='/cart' className='btn btn-ghost btn-circle ml-6'>
                         <div className='indicator'>
                             <FaCartShopping className='w-6 h-6'/>
-                            <span className='indicator-item badge badge-primary badge-sm'>8</span>
+                            <span className='indicator-item badge badge-primary badge-sm'>
+                                {numItemsInCart}
+                            </span>
                         </div>
                     </NavLink>
 

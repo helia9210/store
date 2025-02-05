@@ -25,7 +25,7 @@ const PaginationContainer = () => {
     return(
         <div className='mt-16 flex justify-end'>
             <div className='join'>
-                <button className='btn join-item btn-xs sm:btn-md'
+                <button className='btn join-item btn-xs sm:btn-md '
                         onClick={() => {
                             let prevPage = page - 1;
                             if (prevPage < 1) prevPage = pageCount;
@@ -53,6 +53,7 @@ const PaginationContainer = () => {
             </div>
 
         </div>
+
     )
 }
 
