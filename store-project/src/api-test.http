@@ -1,3 +1,41 @@
+POST https://strapi-store-server.onrender.com/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username":"helia ghafari","email":"helia@gmail.com","password":"secret"
+}
+
+###
+POST https://strapi-store-server.onrender.com/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username":"james smith","email":"james@gmail.com","password":"secret"
+}
+
+###
+POST https://strapi-store-server.onrender.com/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username":"james2 smith","email":"james2@gmail.com","password":"secret"
+}
+
+###
+POST https://strapi-store-server.onrender.com/api/auth/local/register
+Content-Type: application/json
+
+{
+    "username":"james1 smith","email":"james1@gmail.com","password":"secret"
+}
+
+###
+POST https://strapi-store-server.onrender.com/api/auth/local/register
+Content-Type: application/json
+
+{}
+
+###
 GET https://strapi-store-server.onrender.com/api/products?page=2
 Accept: application/json
 

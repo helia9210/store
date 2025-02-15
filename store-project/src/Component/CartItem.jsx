@@ -4,6 +4,16 @@ import {generateAmountOptions} from "../utils/index.jsx";
 
 const CartItem = ({cartItem}) => {
 
+    const dispatch = useDispatch();
+
+    const removeItemsFromTheCart = () => {
+        dispatch(removeItem({cartID}))
+    }
+
+    const handleAmount = (e) => {
+        dispatch(editItem({cartID, amount:parseInt(e.target.value)}));
+    }
+
     const {cartID, title, price, image, amount, company, productColor} = cartItem;
     return(
         <article key={cartID} className='mb-12 flex flex-col gap-y-4 sm:flex-row
@@ -28,12 +38,20 @@ const CartItem = ({cartItem}) => {
                         <label htmlFor='amount' className='label p-0'>
                             <span className='label-text'>Amount</span>
                         </label>
-                        <select name='amount' id='amount' className='mt-2 select select-bordered select-base select-xs'>
-                            {generateAmountOptions(amount)}
+                        <select name='amount'
+                                id='amount'
+                                className='mt-2 select select-bordered select-base select-xs'
+                                value={amount}
+                                onChange={handleAmount}
+                        >
+                            {generateAmountOptions(amount + 5)}
                         </select>
                     </div>
                     {/*REMOVE*/}
-                    <button className='mt-2 link link-primary link-hover text-sm'>
+                    <button
+                        className='mt-2 link link-primary link-hover text-sm'
+                        onClick={removeItemsFromTheCart}
+                    >
                         remove
                     </button>
                 </div>

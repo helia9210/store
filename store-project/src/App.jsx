@@ -23,6 +23,8 @@ import {loader as productsLoader} from './Pages/Products.jsx';
 
 /*actions */
 
+import {action as registerAction}  from "./Pages/Register.jsx";
+
 const router = createBrowserRouter([
     {
         path:'/',
@@ -74,6 +76,7 @@ const router = createBrowserRouter([
         path:'/register',
         element: <Register/>,
         errorElement: <Error/>,
+        action: registerAction,
     },
 
 ]);
