@@ -1,3 +1,11 @@
+POST https://strapi-store-server.onrender.com/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier":"test@test.com","password":"secret"
+}
+
+###
 POST https://strapi-store-server.onrender.com/api/auth/local/register
 Content-Type: application/json
 
