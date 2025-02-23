@@ -1,5 +1,18 @@
 import {useSelector} from "react-redux";
 import {CheckoutForm,SectionTitle,CartTotals} from "../Component";
+import {toast} from "react-toastify";
+import {redirect} from "react-router-dom";
+
+export const loader = (store) => () => {
+
+    const user = store.getState().userState.user;
+
+    if (!user){
+        toast.warn('You need to login to access this page');
+        return redirect('/login');
+    }
+    return null;
+}
 
 const Checkout = () => {
 
