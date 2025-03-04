@@ -35,10 +35,10 @@ export const action = (store) => async ({request}) => {
         return redirect('/orders');
     }catch (error){
         const errorMessage = error?.response?.data?.error?.message || 'there was an error placing your order';
-        toast.error(errorMessage)
+        toast.error(errorMessage);
+        if (error.response.status === 400 || 403) return redirect('/login');
+            return null
     }
-
-    return null;
 }
 
 const CheckoutForm = () => {
